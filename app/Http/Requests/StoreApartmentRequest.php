@@ -24,7 +24,11 @@ class StoreApartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'eventName' => 'required|min:10|max:50'
+            'name' => 'required|string|min:10|max:50',
+            'address' => 'required',
+            'price'=>'integer',
+            'status' =>'digits_between:1,3',
+            'thumbnail'=>'required|url'
         ];
     }
 }
